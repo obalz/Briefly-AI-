@@ -1,8 +1,11 @@
 import React from "react";
 import "./SignIn.css";
 import { App } from "../../App";
+import { useNavigate } from "react-router-dom";
 
 function SignIn() {
+  const navigate = useNavigate();
+
   return (
     <div className="signIn">
       <form action="" className="signInForm">
@@ -16,7 +19,12 @@ function SignIn() {
           <input type="password" placeholder="Password" />
         </div>
         {/* <input type="submit" value="Login" className="btn" onClick={App} /> */}
-        <button onClick={App} className="btn">
+        <button
+          onClick={() => {
+            navigate("/demo");
+          }}
+          className="btn"
+        >
           Log In
         </button>
 

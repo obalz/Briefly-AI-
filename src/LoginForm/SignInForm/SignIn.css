@@ -1,16 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #d3cece;
-}
 .container {
   position: relative;
   width: 70vw;
@@ -106,31 +93,4 @@ a {
 .socialIcon:hover {
   color: #6f74cb;
   border-color: #4a52df;
-}
-
-@media (max-width: 779px) {
-  .container {
-    width: 100vw;
-    height: 100vh;
-  }
-}
-@media (max-width: 635px) {
-  form {
-    width: 80%;
-  }
-
-  .container.sign-up-mode2 form.SignUpForm {
-    display: flex;
-    opacity: 1;
-  }
-
-  .accountText {
-    display: initial;
-    margin-top: 30px;
-  }
-}
-@media (max-width: 320px) {
-  form {
-    width: 90%;
-  }
 }
