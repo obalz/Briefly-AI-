@@ -1,5 +1,5 @@
 import React from "react";
-// import signinImage from "../../assets/signin.svg";
+import signinImage from "../../assets/signinImage.svg";
 
 function LeftPanel({ handleSignIn }) {
   return (
@@ -14,7 +14,7 @@ function LeftPanel({ handleSignIn }) {
           Sign in
         </button>
       </div>
-      {/* <img src={signinImage} alt="" className="image" /> */}
+      <img src={signinImage} alt="" className="image" />
     </div>
   );
 }

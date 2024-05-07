@@ -9,7 +9,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #444;
+  background: #d3cece;
 }
 .container {
   position: relative;
@@ -20,48 +20,20 @@ body {
   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
   overflow: hidden;
 }
-.container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -50%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(-45deg, #4a52df, #070c6b);
-  z-index: 6;
-  transform: translateX(100%);
-  transition: 1s ease-in-out;
-}
-.signinSignup {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  z-index: 5;
-}
+
 form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #f0f0f0;
   width: 40%;
   min-width: 238px;
-  padding: 0 10px;
+  padding: 10px 20px;
+  border: solid 3px #4a52df;
+  border-radius: 15px;
 }
-form.signInForm {
-  opacity: 1;
-  transition: 0.5s ease-in-out;
-  transition-delay: 1s;
-}
-form.signUpForm {
-  opacity: 0;
-  transition: 0.5s ease-in-out;
-  transition-delay: 1s;
-}
+
 .title {
   font-size: 35px;
   color: #4a52df;
@@ -134,4 +106,31 @@ a {
 .socialIcon:hover {
   color: #6f74cb;
   border-color: #4a52df;
+}
+
+@media (max-width: 779px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+@media (max-width: 635px) {
+  form {
+    width: 80%;
+  }
+
+  .container.sign-up-mode2 form.SignUpForm {
+    display: flex;
+    opacity: 1;
+  }
+
+  .accountText {
+    display: initial;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 320px) {
+  form {
+    width: 90%;
+  }
 }

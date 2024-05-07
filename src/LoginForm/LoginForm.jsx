@@ -1,10 +1,12 @@
 import React from "react";
-import Container from "./Components/Container";
+// import Container from "./Components/Container";
+import SignIn from "./SignInForm/SignIn";
 
 function LoginForm() {
   return (
     <div>
-      <Container />
+      {/* <Container /> */}
+      <SignIn />
     </div>
   );
 }
