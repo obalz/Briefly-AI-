@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { copy, linkIcon, loader, tick } from "../assets";
+import { copy, linkIcon, loader, tick, trash } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
 const Demo = () => {
@@ -53,6 +53,15 @@ const Demo = () => {
     setTimeout(() => setCopied(false), 3000);
   };
 
+  // Function to remove the article from history
+  const handleRemove = (urlToRemove) => {
+    const updatedArticles = allArticles.filter(
+      (item) => item.url !== urlToRemove
+    );
+    setAllArticles(updatedArticles);
+    localStorage.setItem("articles", JSON.stringify(updatedArticles));
+  };
+
   const handleKeyDown = (e) => {
     if (e.keyCode === 13) {
       handleSubmit(e);
@@ -90,13 +99,13 @@ const Demo = () => {
           </button>
         </form>
 
-        {/* Browse History */}
+        {/* Browse URL History */}
         <div className="flex flex-col gap-1 max-h-60 overflow-y-auto">
           {allArticles.reverse().map((item, index) => (
             <div
               key={`link-${index}`}
               onClick={() => setArticle(item)}
-              className="link_card"
+              className="link_card flex items-center justify-between" // Center items and add justify-between to move the trash icon to the right
             >
               <div className="copy_btn" onClick={() => handleCopy(item.url)}>
                 <img
@@ -105,6 +114,17 @@ const Demo = () => {
                   className="w-[40%] h-[40%] object-contain"
                 />
               </div>
+              <button
+                className="remove_btn"
+                onClick={() => handleRemove(item.url)} // Function to remove the article
+              >
+                {/* Trash icon */}
+                <img
+                  src={trash}
+                  alt="trash_icon"
+                  className="w-[40%] h-[40%] object-contain"
+                />
+              </button>
               <p className="flex-1 font-satoshi text-blue-700 font-medium text-sm truncate">
                 {item.url}
               </p>

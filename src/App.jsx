@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import Demo from "./components/Demo";
-/* hello*/
+
 import "./App.css";
 
 export const App = () => {
