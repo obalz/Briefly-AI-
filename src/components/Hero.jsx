@@ -10,7 +10,11 @@ const Hero = () => {
         className="flex justify-between
       items-center w-full mb-10 pt-3"
       >
-        <img src={logo} alt="brieflyai_logo" className="w-28 object-contain" />
+        <img
+          src={logo}
+          alt="brieflyai_logo"
+          className="max-w-56 object-contain"
+        />
 
         <button
           type="button"
