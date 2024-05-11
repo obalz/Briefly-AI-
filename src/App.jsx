@@ -1,20 +1,20 @@
-import Hero from "./components/Hero";
-import Demo from "./components/Demo";
+import React from "react";
 
-import "./App.css";
+import Login from "./LogFrontbon/Login";
+import Signup from "./LogFrontbon/Signup";
+import Home from "./LogFrontbon/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-export const App = () => {
+function App() {
   return (
-    <main>
-      <div className="main">
-        <div className="gradient" />
-      </div>
-      <div className="app">
-        <Hero />
-        <Demo />
-      </div>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;
